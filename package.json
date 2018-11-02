@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "react-dom": "^16.6.0"
   },
   "devDependencies": {
     "enzyme": "^3.7.0",
@@ -16,6 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:watch": "react-scripts test --watch",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

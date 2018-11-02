@@ -1,4 +1,4 @@
-# Testing your React app
+# Testing your React App with Jest 🃏
 
 The following scenarios will be covered:
 
@@ -14,10 +14,9 @@ The following scenarios will be covered:
 1. Test event listeners on window or document.
 1. Test code that uses browser global variables.
 
-### Bonus
+### Bonus 🎉
 9. Create [mocks with Jest](https://jestjs.io/docs/en/manual-mocks).
 1. Test [async code](https://jestjs.io/docs/en/tutorial-async).
-
 
 
 ## Available Scripts
