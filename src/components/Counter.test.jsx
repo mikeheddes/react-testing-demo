@@ -13,10 +13,9 @@ describe("<Counter />", () => {
 
   it("should set the state to state + 1 when button is pressed (react-test-renderer)", () => {
     const testInstance = renderer.create(<Counter />).root;
-    console.log(testInstance);
-    expect(testInstance.find('p').children).toBe(0);
+    expect(testInstance.findByType('p').children[0]).toBe("0");
     testInstance.instance.handleIncreaseCount();
-    expect(testInstance.find('p').children).toBe(1);
+    expect(testInstance.findByType('p').children[0]).toBe("1");
   });
 
   it("should match snapshot", () => {
