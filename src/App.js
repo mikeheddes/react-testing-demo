@@ -1,28 +1,41 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Counter from './components/Counter';
+import React, { Component } from "react";
+import styled from "styled-components";
+
+import Counter from "./components/Counter";
+import ScreenWidth from "./components/ScreenWidth";
+import Reminder from "./components/Reminder";
+
+const Box = styled.div`
+  width: 100%;
+  max-width: 500px;
+  margin: 80px auto;
+`;
+
+const Title = styled.h2`
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 42px;
+  color: #222;
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Counter />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <>
+        <Box>
+          <Title>Counter</Title>
+          <Counter />
+        </Box>
+        <Box>
+          <Title>ScreenWidth</Title>
+          <ScreenWidth />
+        </Box>
+        <Box>
+          <Title>Reminder</Title>
+          <Reminder />
+        </Box>
+      </>
     );
   }
 }

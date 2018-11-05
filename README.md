@@ -4,20 +4,37 @@ The following scenarios will be covered:
 
 ### Basic
 1. Test an interaction with a DOM element that updates state.
-1. Test an interaction with a DOM element that calls a [Redux](https://redux.js.org/) action (test that a prop function is called).
-1. Test a component wrapped in a [HOC](https://reactjs.org/docs/higher-order-components.html) without creating a mock for the rest of the world.
+1. Test a component wrapped in a [HOC](https://reactjs.org/docs/higher-order-components.html) like [Redux](https://redux.js.org/)' mapState.
 1. [Snapshots](https://jestjs.io/docs/en/snapshot-testing) all of the above.
 
 ### Advanced
-5. Test a component that is wrapped in the new [React context](https://reactjs.org/docs/context.html).
+4. Test a component that is wrapped in the new [React context](https://reactjs.org/docs/context.html).
 1. Test a [React ref](https://reactjs.org/docs/refs-and-the-dom.html) attached to a DOM node.
-1. Test event listeners on window or document.
 1. Test code that uses browser global variables.
 
 ### Bonus 🎉
-9. Create [mocks with Jest](https://jestjs.io/docs/en/manual-mocks).
+7. Create [mocks with Jest](https://jestjs.io/docs/en/manual-mocks).
 1. Test [async code](https://jestjs.io/docs/en/tutorial-async).
 
+
+## Project structure
+The components and tests are in [`./srs/components`](https://github.com/mikeheddes/react-testing-demo/tree/master/src/components).
+The tests for `Component.jsx` are in `Component.test.jsx`.
+
+Files corresponding to the tests scenarios are:
+#### Basic
+1. [`Counter`](https://github.com/mikeheddes/react-testing-demo/blob/master/src/components/Counter.test.jsx)
+1. [`ScreenWidth`](https://github.com/mikeheddes/react-testing-demo/blob/master/src/components/ScreenWidth.test.jsx)
+1. [`Counter`](https://github.com/mikeheddes/react-testing-demo/blob/master/src/components/Counter.test.jsx) and [`ScreenWidth`](https://github.com/mikeheddes/react-testing-demo/blob/master/src/components/ScreenWidth.test.jsx)
+
+#### Advanced
+4. [`Some`]()
+1. [`Other`]()
+1. [`Example`]()
+
+#### Bonus 🎉
+7. [`Example`]()
+1. [`Example`]()
 
 ## Available Scripts
 
