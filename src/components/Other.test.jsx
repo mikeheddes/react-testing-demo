@@ -9,7 +9,7 @@ describe("Other contains a series of styled components", () => {
     const tree = renderer.create(<Wrapper color="fff" />);
     expect(tree).toMatchSnapshot();
   });
-  
+
   it("snapshot button", () => {
     const tree = renderer.create(<Button />);
     expect(tree).toMatchSnapshot();
