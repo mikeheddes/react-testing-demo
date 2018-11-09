@@ -23,7 +23,7 @@ describe("<ScreenWidth />", () => {
   });
 
   it("should match snapshot", () => {
-    const tree = renderer.create(<ScreenWidth width={345} />).toJSON();
+    const tree = renderer.create(<ScreenWidth width={345} />);
     expect(tree).toMatchSnapshot();
   });
 });

@@ -1,7 +1,7 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
-import renderer from "react-test-renderer";
+import { mount } from "enzyme";
 import "jest-styled-components";
+
 import Reminder from "./Reminder";
 
 describe("reminders", () => {
@@ -18,12 +18,14 @@ describe("reminders", () => {
     // or check the length of TodoItems
     expect(wrapper.find("ToDoItem")).toHaveLength(2);
   });
+
   it("does not allow empty reminders to be submited", () => {
     const wrapper = mount(<Reminder />);
     const submit = wrapper.find("#submit").first();
     submit.simulate("click");
     expect(wrapper.state()).toEqual({ reminders: ["Buy an apple"] });
   });
+
   it("does not allow duplicate reminders", () => {
     const wrapper = mount(<Reminder />);
     const input = wrapper.find("input");
@@ -34,6 +36,7 @@ describe("reminders", () => {
       reminders: ["Buy an apple"]
     });
   });
+
   it("allows the user to remove a reminder", () => {
     const wrapper = mount(<Reminder />);
     const FirstTodoItem = wrapper.find("ToDoItem");
@@ -44,7 +47,7 @@ describe("reminders", () => {
     });
     expect(wrapper.find("ToDoItem")).toHaveLength(0);
   });
-  //   focus input
+
   it("focus the input when the mouse enters", () => {
     const wrapper = mount(<Reminder />);
     const inputElement = wrapper.find("input");
