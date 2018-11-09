@@ -17,6 +17,7 @@ The components and tests are in [`./srs/components`](https://github.com/mikehedd
 The tests for `Component.jsx` are in `Component.test.jsx`.
 
 Files corresponding to the tests scenarios are:
+
 #### Basic
 1. [`Counter`](https://github.com/mikeheddes/react-testing-demo/blob/master/src/components/Counter.test.jsx)
 1. [`ScreenWidth`](https://github.com/mikeheddes/react-testing-demo/blob/master/src/components/ScreenWidth.test.jsx)
@@ -25,10 +26,6 @@ Files corresponding to the tests scenarios are:
 #### Advanced
 4. [`Some`]()
 1. [`Other`]()
-1. [`Example`]()
-
-#### Bonus 🎉
-7. [`Example`]()
 1. [`Example`]()
 
 ## Available Scripts
