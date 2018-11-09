@@ -23,7 +23,7 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
-    "test:watch": "react-scripts test --watch",
+    "test:watch": "react-scripts test --watch --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

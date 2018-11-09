@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Other contains a series of styled components snapshot button 1`] = `
+.c0 {
+  color: white;
+  font-weight: 500;
+  font-size: 42px;
+  padding: 39px 50px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.c0:active {
+  opacity: 0.5;
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`Other contains a series of styled components snapshot label 1`] = `
+.c0 {
+  display: block;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 42px;
+  padding: 39px 50px;
+}
+
+<span
+  className="c0"
+/>
+`;
+
+exports[`Other contains a series of styled components snapshot line 1`] = `
+.c0 {
+  width: 5px;
+  background-color: white;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Other contains a series of styled components snapshot wrapper 1`] = `
+.c0 {
+  background-color: fff;
+  position: relative;
+  box-shadow: 8px 8px rgba(0,0,0,0.15);
+}
+
+<div
+  className="c0"
+  color="fff"
+/>
+`;
