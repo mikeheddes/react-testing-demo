@@ -48,12 +48,10 @@ function withScreenWidth(WrappedComponent) {
   };
 }
 
-const ScreenWidth = ({ width }) => (
+export const ScreenWidth = ({ width }) => (
   <Wrapper color="#855FEB">
     <Label>{width} px</Label>
   </Wrapper>
 );
-
-export { ScreenWidth };
 
 export default withScreenWidth(ScreenWidth);
