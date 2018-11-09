@@ -8,7 +8,7 @@ The following scenarios will be covered:
 1. Create [snapshots](https://jestjs.io/docs/en/snapshot-testing) for the above.
 
 ### Advanced
-4. Test a component that is wrapped in the new [React context](https://reactjs.org/docs/context.html).
+4. Test a component that is wrapped in the [React context](https://reactjs.org/docs/context.html).
 1. Test a [React ref](https://reactjs.org/docs/refs-and-the-dom.html) attached to a DOM node.
 1. Test code that uses browser global variables.
 
