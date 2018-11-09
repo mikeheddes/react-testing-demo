@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import { Wrapper, Label, Button, Line } from "./Other";
@@ -27,24 +27,14 @@ const Rotate = styled.span`
   display: inline-block;
 `;
 
-class ToDoItem extends Component {
-  handleRemove = () => {
-    const { children, onRemove } = this.props;
-    onRemove(children);
-  };
-
-  render() {
-    const { children } = this.props;
-    return (
-      <ItemWrapper color="#495265">
-        <StyledLabel>{children}</StyledLabel>
-        <Line />
-        <StyledButton onClick={this.handleRemove}>
-          <Rotate>+</Rotate>
-        </StyledButton>
-      </ItemWrapper>
-    );
-  }
-}
+const ToDoItem = ({ children, onRemove }) => (
+  <ItemWrapper color="#495265">
+    <StyledLabel>{children}</StyledLabel>
+    <Line />
+    <StyledButton onClick={onRemove}>
+      <Rotate>+</Rotate>
+    </StyledButton>
+  </ItemWrapper>
+);
 
 export default ToDoItem;
