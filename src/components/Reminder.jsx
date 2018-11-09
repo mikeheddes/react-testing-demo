@@ -38,10 +38,9 @@ class Reminder extends Component {
     });
   };
 
-  removeReminder = label => {
-    const reminders = this.state.reminders.filter(
-      reminder => reminder !== label
-    );
+  removeReminder = i => {
+    const reminders = [...this.state.reminders];
+    reminders.splice(i, 1);
     this.setState({ reminders });
   };
 
@@ -74,8 +73,8 @@ class Reminder extends Component {
           </Button>
         </ToDoWrapper>
 
-        {this.state.reminders.map(reminder => (
-          <Item onRemove={this.removeReminder} key={reminder}>
+        {this.state.reminders.map((reminder, i) => (
+          <Item onRemove={() => this.removeReminder(i)} key={reminder}>
             {reminder}
           </Item>
         ))}
