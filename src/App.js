@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { HashRouter } from "react-router-dom";
 
 import Counter from "./components/Counter";
 import ScreenWidth from "./components/ScreenWidth";
+import PageURL from "./components/PageURL";
 import Reminder from "./components/Reminder";
 
 const Box = styled.div`
@@ -22,6 +24,7 @@ const Title = styled.h2`
 class App extends Component {
   render() {
     return (
+      <HashRouter>
       <>
         <Box>
           <Title>Counter</Title>
@@ -32,10 +35,15 @@ class App extends Component {
           <ScreenWidth />
         </Box>
         <Box>
+          <Title>PageURL</Title>
+          <PageURL />
+        </Box>
+        <Box>
           <Title>Reminder</Title>
           <Reminder />
         </Box>
       </>
+      </HashRouter>
     );
   }
 }

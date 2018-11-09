@@ -4,18 +4,13 @@ The following scenarios will be covered:
 
 ### Basic
 1. Test an interaction with a DOM element that updates state.
-1. Test a component wrapped in a [HOC](https://reactjs.org/docs/higher-order-components.html) like [Redux](https://redux.js.org/)' mapState.
-1. [Snapshots](https://jestjs.io/docs/en/snapshot-testing) all of the above.
+1. Test a component wrapped in a [HOC](https://reactjs.org/docs/higher-order-components.html) (e.g. [Redux](https://redux.js.org/)' mapState).
+1. Create [snapshots](https://jestjs.io/docs/en/snapshot-testing) for the above.
 
 ### Advanced
 4. Test a component that is wrapped in the new [React context](https://reactjs.org/docs/context.html).
 1. Test a [React ref](https://reactjs.org/docs/refs-and-the-dom.html) attached to a DOM node.
 1. Test code that uses browser global variables.
-
-### Bonus 🎉
-7. Create [mocks with Jest](https://jestjs.io/docs/en/manual-mocks).
-1. Test [async code](https://jestjs.io/docs/en/tutorial-async).
-
 
 ## Project structure
 The components and tests are in [`./srs/components`](https://github.com/mikeheddes/react-testing-demo/tree/master/src/components).
