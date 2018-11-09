@@ -25,7 +25,7 @@ The following scenarios will be covered:
 
 ### Advanced
 
-4. Test a component that is wrapped in the new [React context](https://reactjs.org/docs/context.html). [[`PageURL`](https://github.com/mikeheddes/react-testing-demo/blob/master/src/components/PageURL.test.jsx)]
+4. Test a component that is wrapped in the [React context](https://reactjs.org/docs/context.html). [[`PageURL`](https://github.com/mikeheddes/react-testing-demo/blob/master/src/components/PageURL.test.jsx)]
 1. Test a [React ref](https://reactjs.org/docs/refs-and-the-dom.html) attached to a DOM node. [[`Reminder`](https://github.com/mikeheddes/react-testing-demo/blob/test-solutions/src/components/Reminder.test.jsx)]
 1. Test code that uses browser global variables. [[`ScreenWidth`](https://github.com/mikeheddes/react-testing-demo/blob/master/src/components/ScreenWidth.test.jsx)]
 
