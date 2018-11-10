@@ -49,16 +49,17 @@ class Reminder extends Component {
   };
 
   handleKeyPress = e => {
-    if(e.key === 'Enter'){
-      this.addReminder()
+    if (e.key === "Enter") {
+      this.addReminder();
     }
-  }
+  };
 
   render() {
     return (
       <>
         <ToDoWrapper color="#3F79FC">
           <Input
+            id="input"
             as="input"
             type="text"
             placeholder="What to do..."
@@ -67,7 +68,9 @@ class Reminder extends Component {
             onKeyPress={this.handleKeyPress}
           />
           <Line />
-          <Button onClick={this.addReminder}>+</Button>
+          <Button id="submit" onClick={this.addReminder}>
+            +
+          </Button>
         </ToDoWrapper>
 
         {this.state.reminders.map((reminder, i) => (

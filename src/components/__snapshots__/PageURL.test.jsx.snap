@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageURL wrapped snapshot 1`] = `
+.c1 {
+  background-color: #FAA138;
+  position: relative;
+  box-shadow: 8px 8px rgba(0,0,0,0.15);
+}
+
+.c2 {
+  display: block;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 42px;
+  padding: 39px 50px;
+}
+
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+<a
+  alt="Click for new random url"
+  className="c0"
+  href="/c0kio"
+  onClick={[Function]}
+  title="Click for new random url"
+>
+  <div
+    className="c1"
+    color="#FAA138"
+  >
+    <span
+      className="c2"
+    >
+      URL: 
+      /en
+    </span>
+  </div>
+</a>
+`;

@@ -14,7 +14,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-const PageUrl = ({ location: { pathname } }) => (
+export const PageUrl = ({ location: { pathname } }) => (
   <StyledLink
     to={createRandomString()}
     alt="Click for new random url"
