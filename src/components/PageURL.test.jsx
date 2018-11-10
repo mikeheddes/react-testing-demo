@@ -3,26 +3,52 @@ import renderer from "react-test-renderer";
 import "jest-styled-components";
 import { MemoryRouter } from "react-router-dom";
 
-import RoutedPageURL, { PageUrl } from "./PageURL";
+import RoutedPageURL, { PageURL, createRandomString } from "./PageURL";
 
 describe("PageURL", () => {
-  // normally a functional component can just be tested with a snapshot
-  // but it doesn't work, the link needs to be in the router context
-  it("doesn't match snapshot", () => {
+  // Normally a functional component can just be tested with a snapshot
+  // but here that doesn't work, the Link inside PageURL needs to be in
+  // the react-router-dom context.
+  it("throws error when rendered without router context", () => {
+    console.error = jest.fn(); // removes error log from test output
     const shouldThrow = () =>
-      renderer.create(<PageUrl location={{ pathname: "our-url" }} />);
+      renderer.create(<PageURL location={{ pathname: "our-url" }} />);
     expect(shouldThrow).toThrowError();
   });
 
-  it("wrapped snapshot", () => {
-    // breaks every time you run the test
-    // snapshots expect *predictable* behaviour
-    // *random* data should never be used with snapshots
+  it("matches snapshot", () => {
+    // The default nextUrl prop is set to create a random string.
+    // This will break the snapshots everytime therefor random data
+    // should never be used with snapshots.
+    // Snapshot expect predictable behaviour.
+    const nextUrl = "next_url";
+    // Add the MemoryRouter with an initial state to inject the
+    // react-router-dom context the Link component needs.
     const tree = renderer.create(
-      <MemoryRouter initialEntries={["/en"]} initialIndex={0}>
-        <RoutedPageURL />
+      <MemoryRouter initialEntries={["/initial_url"]} initialIndex={0}>
+        <RoutedPageURL nextUrl={nextUrl} />
       </MemoryRouter>
     );
     expect(tree).toMatchSnapshot();
+  });
+
+  // Test the createRandomString generator seperatly to see if it
+  // returns random strings as expected.
+  describe("createRandomString", () => {
+    it("returns random strings", () => {
+      const val1 = createRandomString();
+      expect(typeof val1).toBe("string");
+
+      const val2 = createRandomString();
+      expect(typeof val2).toBe("string");
+
+      expect(val1).not.toBe(val2);
+    });
+
+    it("returns string of length 5", () => {
+      const val1 = createRandomString();
+      expect(typeof val1).toBe("string");
+      expect(val1).toHaveLength(5);
+    });
   });
 });

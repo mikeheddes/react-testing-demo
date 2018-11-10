@@ -80,7 +80,7 @@ exports[`<Counter /> should match snapshot 1`] = `
 >
   <button
     className="c1"
-    id="dec"
+    data-testid="dec"
     onClick={[Function]}
   >
     -
@@ -92,7 +92,7 @@ exports[`<Counter /> should match snapshot 1`] = `
   </span>
   <button
     className="c1"
-    id="inc"
+    data-testid="inc"
     onClick={[Function]}
   >
     +

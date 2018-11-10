@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PageURL wrapped snapshot 1`] = `
+exports[`PageURL matches snapshot 1`] = `
 .c1 {
   background-color: #FAA138;
   position: relative;
@@ -24,7 +24,7 @@ exports[`PageURL wrapped snapshot 1`] = `
 <a
   alt="Click for new random url"
   className="c0"
-  href="/c0kio"
+  href="/next_url"
   onClick={[Function]}
   title="Click for new random url"
 >
@@ -36,7 +36,7 @@ exports[`PageURL wrapped snapshot 1`] = `
       className="c2"
     >
       URL: 
-      /en
+      /initial_url
     </span>
   </div>
 </a>

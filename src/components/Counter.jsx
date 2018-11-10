@@ -52,11 +52,11 @@ class Counter extends Component {
     const { value } = this.state;
     return (
       <Wrapper color="#eb4b4b">
-        <StyledButton id="dec" onClick={this.handleDecreaseCount}>
+        <StyledButton data-testid="dec" onClick={this.handleDecreaseCount}>
           -
         </StyledButton>
         <Label>{value}</Label>
-        <StyledButton id="inc" onClick={this.handleIncreaseCount}>
+        <StyledButton data-testid="inc" onClick={this.handleIncreaseCount}>
           +
         </StyledButton>
         <StyledLine />

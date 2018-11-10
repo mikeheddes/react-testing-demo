@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import { Wrapper, Label } from "./Other";
 
@@ -6,41 +7,32 @@ function withScreenWidth(WrappedComponent) {
   return class extends Component {
     constructor(props) {
       super(props);
-      this.throttle("resize", "optimizedResize");
       this.state = {
         width: window.innerWidth
       };
+      this.handleResize = this.handleResize.bind(this);
+      // Keep separate from state because a change should not cause a rerender
+      this.updating = false;
     }
 
     componentDidMount() {
-      window.addEventListener("optimizedResize", this.handleResize);
+      window.addEventListener("resize", this.handleResize);
     }
 
     componentWillUnmount() {
-      window.removeEventListener("optimizedResize", this.handleResize);
+      window.removeEventListener("resize", this.handleResize);
     }
 
-    throttle(type, name, obj) {
-      obj = obj || window;
-      var running = false;
-      var func = function() {
-        if (running) {
-          return;
-        }
-        running = true;
-        requestAnimationFrame(function() {
-          obj.dispatchEvent(new CustomEvent(name));
-          running = false;
+    handleResize() {
+      if (this.updating) return;
+      this.updating = true;
+
+      requestAnimationFrame(() => {
+        this.setState({ width: window.innerWidth }, () => {
+          this.updating = false;
         });
-      };
-      obj.addEventListener(type, func);
-    }
-
-    handleResize = () => {
-      this.setState({
-        width: window.innerWidth
       });
-    };
+    }
 
     render() {
       return <WrappedComponent width={this.state.width} {...this.props} />;
@@ -53,5 +45,9 @@ export const ScreenWidth = ({ width }) => (
     <Label>{width} px</Label>
   </Wrapper>
 );
+
+ScreenWidth.propTypes = {
+  width: PropTypes.number.isRequired
+};
 
 export default withScreenWidth(ScreenWidth);

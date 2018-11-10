@@ -86,6 +86,7 @@ exports[`<ReminderItem /> match snapshot 1`] = `
   />
   <button
     className="c3"
+    onClick={[MockFunction]}
   >
     <span
       className="c4"

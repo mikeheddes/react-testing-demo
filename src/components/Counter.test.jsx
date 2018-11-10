@@ -10,10 +10,10 @@ describe("<Counter />", () => {
     const wrapper = shallow(<Counter />);
     expect(wrapper.find(Label).text()).toEqual("0");
 
-    wrapper.find("#inc").simulate("click");
+    wrapper.find('[data-testid="inc"]').simulate("click");
     expect(wrapper.find(Label).text()).toEqual("1");
 
-    wrapper.find("#dec").simulate("click");
+    wrapper.find('[data-testid="dec"]').simulate("click");
     expect(wrapper.find(Label).text()).toEqual("0");
   });
 

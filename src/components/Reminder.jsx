@@ -27,14 +27,15 @@ const ToDoWrapper = styled(Wrapper)`
 class Reminder extends Component {
   input = React.createRef();
 
-  state = { reminders: ["Buy an apple"] };
+  state = { reminders: ["Buy an apple"], value: "" };
 
   addReminder = () => {
-    const label = this.input.current.value;
+    const label = this.state.value;
     if (!label) return;
     if (this.state.reminders.indexOf(label) !== -1) return;
-    this.setState({ reminders: [...this.state.reminders, label] }, () => {
-      this.input.current.value = "";
+    this.setState({
+      reminders: [...this.state.reminders, label],
+      value: ""
     });
   };
 
@@ -48,6 +49,10 @@ class Reminder extends Component {
     this.input.current.focus();
   };
 
+  handleInputChange = e => {
+    this.setState({ value: e.target.value });
+  };
+
   handleKeyPress = e => {
     if (e.key === "Enter") {
       this.addReminder();
@@ -55,25 +60,25 @@ class Reminder extends Component {
   };
 
   render() {
+    const { reminders, value } = this.state;
     return (
       <>
         <ToDoWrapper color="#3F79FC">
           <Input
-            id="input"
             as="input"
             type="text"
+            value={value}
             placeholder="What to do..."
             ref={this.input}
             onMouseEnter={this.focusInput}
+            onChange={this.handleInputChange}
             onKeyPress={this.handleKeyPress}
           />
           <Line />
-          <Button id="submit" onClick={this.addReminder}>
-            +
-          </Button>
+          <Button onClick={this.addReminder}>+</Button>
         </ToDoWrapper>
 
-        {this.state.reminders.map((reminder, i) => (
+        {reminders.map((reminder, i) => (
           <Item onRemove={() => this.removeReminder(i)} key={reminder}>
             {reminder}
           </Item>

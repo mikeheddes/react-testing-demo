@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import PropTypes from "prop-types";
 
 export const textStyle = css`
   color: white;
@@ -12,6 +13,10 @@ const Wrapper = styled.div`
   position: relative;
   box-shadow: 8px 8px rgba(0, 0, 0, 0.15);
 `;
+
+Wrapper.propTypes = {
+  color: PropTypes.string
+};
 
 Wrapper.defaultProps = {
   color: "#d8d8d8"

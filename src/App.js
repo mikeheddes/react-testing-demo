@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { HashRouter } from "react-router-dom";
 
@@ -21,31 +21,27 @@ const Title = styled.h2`
   color: #222;
 `;
 
-class App extends Component {
-  render() {
-    return (
-      <HashRouter>
-      <>
-        <Box>
-          <Title>Counter</Title>
-          <Counter />
-        </Box>
-        <Box>
-          <Title>ScreenWidth</Title>
-          <ScreenWidth />
-        </Box>
-        <Box>
-          <Title>PageURL</Title>
-          <PageURL />
-        </Box>
-        <Box>
-          <Title>Reminder</Title>
-          <Reminder />
-        </Box>
-      </>
-      </HashRouter>
-    );
-  }
-}
+const App = () => (
+  <HashRouter>
+    <>
+      <Box>
+        <Title>Counter</Title>
+        <Counter />
+      </Box>
+      <Box>
+        <Title>ScreenWidth</Title>
+        <ScreenWidth />
+      </Box>
+      <Box>
+        <Title>PageURL</Title>
+        <PageURL />
+      </Box>
+      <Box>
+        <Title>Reminder</Title>
+        <Reminder />
+      </Box>
+    </>
+  </HashRouter>
+);
 
 export default App;

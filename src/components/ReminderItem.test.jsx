@@ -6,10 +6,10 @@ import ToDoItem from "./ReminderItem";
 
 describe("<ReminderItem />", () => {
   it("match snapshot", () => {
+    const onRemove = jest.fn();
     const tree = renderer.create(
-      <ToDoItem>
-        The Label
-      </ToDoItem>);
+      <ToDoItem onRemove={onRemove}>The Label</ToDoItem>
+    );
     expect(tree).toMatchSnapshot();
   });
 });

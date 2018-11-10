@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { withRouter, Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { Wrapper, Label } from "./Other";
 
-function createRandomString() {
+export function createRandomString() {
   return Math.random()
     .toString(26)
     .slice(3, 8);
@@ -14,9 +15,9 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-export const PageUrl = ({ location: { pathname } }) => (
+export const PageURL = ({ location: { pathname }, nextUrl }) => (
   <StyledLink
-    to={createRandomString()}
+    to={typeof nextUrl === "function" ? nextUrl() : nextUrl}
     alt="Click for new random url"
     title="Click for new random url"
   >
@@ -26,4 +27,15 @@ export const PageUrl = ({ location: { pathname } }) => (
   </StyledLink>
 );
 
-export default withRouter(PageUrl);
+PageURL.propTypes = {
+  nextUrl: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  }).isRequired
+};
+
+PageURL.defaultProps = {
+  nextUrl: createRandomString
+};
+
+export default withRouter(PageURL);

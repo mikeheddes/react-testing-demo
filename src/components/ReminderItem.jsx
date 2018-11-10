@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import { Wrapper, Label, Button, Line } from "./Other";
@@ -36,5 +37,10 @@ const ToDoItem = ({ children, onRemove }) => (
     </StyledButton>
   </ItemWrapper>
 );
+
+ToDoItem.propTypes = {
+  children: PropTypes.string.isRequired,
+  onRemove: PropTypes.func.isRequired
+};
 
 export default ToDoItem;
