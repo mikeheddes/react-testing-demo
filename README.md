@@ -35,6 +35,6 @@ You will also see any lint errors in the console.
 
 Runs the tests in watch mode.
 
-### `npm test:watch`
+### `npm run test:watch`
 
 Runs the tests in watch mode and shows the test coverage.
